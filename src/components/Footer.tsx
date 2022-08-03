@@ -41,14 +41,14 @@ const Footer: React.FC<{ className?: string }> = ({ className }) => {
           {libraryWebsite && (
             <ListItem>
               <FooterExternalLink href={libraryWebsite.href}>
-                Library Homepage
+                Palace Bookshelf Homepage
               </FooterExternalLink>
             </ListItem>
           )}
           <ListItem>
-            <NavButton variant="link" href="/loans" color="ui.black">
-              My Books
-            </NavButton>
+            <FooterExternalLink href={"https://dp.la"}>
+              DPLA Main Site
+            </FooterExternalLink>
           </ListItem>
           <ListItem>
             {registration && (
