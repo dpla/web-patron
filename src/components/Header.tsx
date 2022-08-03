@@ -40,11 +40,8 @@ const HeaderFC: React.FC<{ className?: string }> = ({ className }) => {
           mb: [1, 0]
         }}
       >
-        {library.logoUrl ? (
-          <img src={library.logoUrl} alt={`${library.catalogName} Logo`} />
-        ) : (
-          <Text variant="text.headers.primary">{library.catalogName}</Text>
-        )}
+        <img src={library.logoUrl} alt={`${library.catalogName} Logo`} />
+        <Text variant="text.headers.primary">{library.catalogName}</Text>
       </Link>
       <Stack
         direction="column"
@@ -65,11 +62,7 @@ const HeaderFC: React.FC<{ className?: string }> = ({ className }) => {
 };
 
 const HeaderLinks: React.FC<{ library: LibraryData }> = ({ library }) => {
-  const { helpWebsite, libraryWebsite } = library.libraryLinks;
-  const libraryName = library.catalogName;
-  const { isAuthenticated, isLoading } = useUser();
-  const { baseLoginUrl } = useLogin();
-
+  const { helpWebsite } = library.libraryLinks;
   return (
     <div
       sx={{
@@ -98,35 +91,6 @@ const HeaderLinks: React.FC<{ library: LibraryData }> = ({ library }) => {
         >
           Help
         </AnchorButton>
-      )}
-      {libraryWebsite && (
-        <AnchorButton
-          variant="ghost"
-          color="ui.black"
-          href={libraryWebsite.href}
-          title="help"
-          sx={{ whiteSpace: "initial" }}
-        >
-          {libraryWebsite.title ?? `${libraryName} Home`}
-        </AnchorButton>
-      )}
-      <NavButton
-        variant="ghost"
-        color="ui.black"
-        href="/loans"
-        iconLeft={BookIcon}
-        sx={{ mr: 1 }}
-      >
-        My Books
-      </NavButton>
-      {isAuthenticated ? (
-        <SignOut />
-      ) : isLoading ? (
-        <Button loading />
-      ) : (
-        <NavButton color="ui.black" href={baseLoginUrl}>
-          Sign In
-        </NavButton>
       )}
     </div>
   );
