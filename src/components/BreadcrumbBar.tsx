@@ -29,7 +29,7 @@ const BreadcrumbBar: React.FC<{
     <div
       className={className}
       sx={{
-        backgroundColor: "brand.primary",
+        backgroundColor: "#000",
         color: "ui.white",
         m: 0,
         p: 2,
