@@ -40,7 +40,7 @@ const HeaderFC: React.FC<{ className?: string }> = ({ className }) => {
           mb: [1, 0]
         }}
       >
-        <img src={library.logoUrl} alt={`${library.catalogName} Logo`} />
+        <img src={"/img/palace.png"} alt={`${library.catalogName} Logo`} />
         <Text variant="text.headers.primary">{library.catalogName}</Text>
       </Link>
       <Stack
