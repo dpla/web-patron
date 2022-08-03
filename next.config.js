@@ -82,6 +82,9 @@ log(`Media Support: `, APP_CONFIG.mediaSupport);
 log(`Libraries: `, APP_CONFIG.libraries);
 
 const config = {
+  async redirects() {
+    return [{ source: "/", destination: "/palace_bookshelf", permanent: true }];
+  },
   env: {
     CONFIG_FILE: CONFIG_FILE,
     REACT_AXE: REACT_AXE,
