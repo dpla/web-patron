@@ -52,7 +52,7 @@ companion_app: simplye
 # bugsnag_api_key: xxx
 
 # GOOGLE TAG MANAGER: defines the google tag manager id to integrate web analytics
-# gtm_id: xxx
+gtmId: GTM-M2G273F
 
 # There are also some environment variables that can be set in the .env.local
 # file. They are set there because they're for development, not production
